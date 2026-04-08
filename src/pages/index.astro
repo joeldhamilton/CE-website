@@ -9,13 +9,13 @@ const categories = [
   {
     title: 'Oil Presses',
     description: 'The heart of cold-press oil production. From small-batch artisan presses to high-capacity industrial systems, we have a press for every scale.',
-    image: `${base}/images/kk500_JPG.jpg`,
+    image: `${base}/images/kk500.jpg`,
     href: `${base}/presses/`,
   },
   {
     title: 'Oil Filters',
     description: 'Crystal-clear oil every time. Our chamber filter presses remove sediment and particles to produce market-ready oil.',
-    image: `${base}/images/kkf470-10-3_JPG.jpg`,
+    image: `${base}/images/kkf470-10-3.jpg`,
     href: `${base}/filters/`,
   },
   {
@@ -208,16 +208,14 @@ const categories = [
   .cat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--color-green-light); }
 
   .cat-image {
-    aspect-ratio: 16/10;
-    overflow: hidden;
-    background: var(--color-gray-light);
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 1.25rem;
   }
 
-  .cat-image img { max-height: 100%; object-fit: contain; }
+  .cat-image img { max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 8px; }
 
   .cat-content { padding: 1.5rem; }
   .cat-content h3 { font-size: 1.3rem; color: var(--color-dark); margin-bottom: 0.5rem; }
