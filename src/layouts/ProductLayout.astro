@@ -118,16 +118,16 @@ const base = import.meta.env.BASE_URL;
   }
 
   .product-image-wrap {
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    background: var(--color-gray-light);
+    padding: 1.5rem;
   }
 
   .product-image-wrap img {
+    max-height: 420px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4/3;
+    object-fit: contain;
   }
 
   .product-tag {
