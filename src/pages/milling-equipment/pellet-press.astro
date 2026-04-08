@@ -1,0 +1,20 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Pellet Press"
+  subtitle="KKP100 / KKP200 / KKP300"
+  image={`${base}/images/pellet-press.jpg`}
+  description="Turn press cake, straw, and biomass into dense pellets. Three models from 100 to 300 kg/hr capacity."
+  specs={[
+    { label: "KKP100 Capacity", value: "100 kg/h (9.2 kW / 400V)" },
+    { label: "KKP200 Capacity", value: "200 kg/h (15 kW)" },
+    { label: "KKP300 Capacity", value: "300 kg/h (22 kW)" },
+    { label: "Pellet Size", value: "5–20 mm" },
+    { label: "Speed", value: "50–160 RPM (KKP200/300)" },
+  ]}
+  applications="Fermented substrate, cereal straw, peeling waste (sunflower seed husks, spelt husks), energy grass (miscanthus, switch grass), spent hemp biomass."
+  brochure="pellet-press-brochure.pdf"
+/>

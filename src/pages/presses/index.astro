@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ProductCard from '../../components/ProductCard.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Oil Presses | Circle Energy">
+  <Header />
+  <main class="category-page">
+    <section class="category-hero">
+      <div class="container">
+        <h1>Oil Presses</h1>
+        <p>The heart of our process. Our cold-press oil presses are engineered in Germany for maximum yield, minimal heat, and long-lasting reliability — from hand-cranked models for education to industrial presses processing 500 kg/hr.</p>
+      </div>
+    </section>
+    <section class="products">
+      <div class="container">
+        <div class="product-grid">
+          <ProductCard
+            name="Oil Prince"
+            subtitle="Compact Oil Press"
+            image={`${base}/images/oil-prince.jpg`}
+            href={`${base}/presses/oil-prince/`}
+            capacity="Up to 15 kg/hr"
+          />
+          <ProductCard
+            name="KK20"
+            subtitle="Small Oil Press"
+            image={`${base}/images/kk20.jpg`}
+            href={`${base}/presses/kk20/`}
+            capacity="Up to 20 kg/hr"
+          />
+          <ProductCard
+            name="KK40"
+            subtitle="Mid-Size Oil Press"
+            image={`${base}/images/kk40.jpg`}
+            href={`${base}/presses/kk40/`}
+            capacity="Up to 40 kg/hr"
+          />
+          <ProductCard
+            name="KK80"
+            subtitle="Production Oil Press"
+            image={`${base}/images/kk80.jpg`}
+            href={`${base}/presses/kk80/`}
+            capacity="Up to 80 kg/hr"
+          />
+          <ProductCard
+            name="KK100"
+            subtitle="Production Oil Press"
+            image={`${base}/images/kk100.jpg`}
+            href={`${base}/presses/kk100/`}
+            capacity="Up to 100 kg/hr"
+          />
+          <ProductCard
+            name="KK200"
+            subtitle="Industrial Oil Press"
+            image={`${base}/images/kk200.jpg`}
+            href={`${base}/presses/kk200/`}
+            capacity="Up to 200 kg/hr"
+          />
+          <ProductCard
+            name="KK500"
+            subtitle="Heavy-Duty Industrial Press"
+            image={`${base}/images/kk500.jpg`}
+            href={`${base}/presses/kk500/`}
+            capacity="Up to 500 kg/hr"
+          />
+          <ProductCard
+            name="Hand Press"
+            subtitle="Manual Oil Press"
+            image={`${base}/images/hand-press.jpg`}
+            href={`${base}/presses/hand-press/`}
+            capacity="Up to 3 kg/hr"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .category-page {
+    padding-top: 5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .category-hero {
+    padding: 3rem 0 2rem;
+    background: var(--color-cream);
+    text-align: center;
+  }
+
+  .category-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+
+  .category-hero p {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .products {
+    padding: 3rem 0 5rem;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

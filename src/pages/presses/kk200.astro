@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KK200 F Universal"
+  subtitle="Industrial Oil Press"
+  image={`${base}/images/kk200.jpg`}
+  description="The KK200 is built for high-volume production. Process up to 200 kg/hr of seeds with consistent quality and minimal operator intervention."
+  specs={[
+    { label: "Seed Capacity", value: "up to 200 kg/h" },
+    { label: "Engine Power", value: "9.2 kW" },
+    { label: "Speed", value: "15–70 RPM" },
+    { label: "Voltage Standard", value: "400V-3ph" },
+    { label: "Voltage Special", value: "110V-2ph / 230V-1ph / 230V-3ph / 460-480V-3ph" },
+    { label: "Dimensions", value: "1870 × 500 × 1260 mm" },
+    { label: "Weight", value: "470 kg" },
+  ]}
+  applications="Amaranth, apricot kernels, avocado, baobab, cotton seeds, fenugreek, borage, coconut/copra, chia, peanut, safflower, pomegranate, rose hip, hemp, hazelnut, jatropha, jojoba, camellia, cherry pits, coriander, pumpkin seeds, gold of pleasure, linseed, lupines, corn germ, almonds, milk thistle, moringa, neem, niger seed, palm kernels, poppy seed, rapeseed, sacha inchi, black cumin, mustard, sesame, soybeans, sunflower seeds, grape seeds, walnut, and more."
+  scope="Oil press with stainless steel hopper, electrical control cabinet, pressing tools (1 hammer wrench)."
+  brochure="kk200-brochure.pdf"
+/>

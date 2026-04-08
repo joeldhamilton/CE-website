@@ -1,0 +1,258 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface SpecRow {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  name: string;
+  subtitle: string;
+  image: string;
+  description: string;
+  specs: SpecRow[];
+  applications?: string;
+  scope?: string;
+  brochure?: string;
+  optional?: string;
+}
+
+const { name, subtitle, image, description, specs, applications, scope, brochure, optional } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={`${name} | Circle Energy`} description={`${name} - ${subtitle}. ${description}`}>
+  <Header />
+  <main class="product-page">
+    <section class="product-hero">
+      <div class="container">
+        <div class="product-grid">
+          <div class="product-image-wrap">
+            <img src={image} alt={name} />
+          </div>
+          <div class="product-info">
+            <p class="product-tag">{subtitle}</p>
+            <h1>{name}</h1>
+            <p class="product-desc">{description}</p>
+            <div class="product-actions">
+              <a href={`${base}/contact/`} class="btn btn-primary">Request a Quote</a>
+              {brochure && <a href={`${base}/brochures/${brochure}`} class="btn btn-secondary" target="_blank">Download Brochure</a>}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-details">
+      <div class="container">
+        <div class="details-grid">
+          <div class="specs-section">
+            <h2>Specifications</h2>
+            <table class="specs-table">
+              <tbody>
+                {specs.map(spec => (
+                  <tr>
+                    <td class="spec-label">{spec.label}</td>
+                    <td class="spec-value">{spec.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-section">
+            {applications && (
+              <div class="info-block">
+                <h2>Applications</h2>
+                <p>{applications}</p>
+              </div>
+            )}
+
+            {scope && (
+              <div class="info-block">
+                <h2>Scope of Delivery</h2>
+                <p>{scope}</p>
+              </div>
+            )}
+
+            {optional && (
+              <div class="info-block">
+                <h2>Optional Equipment</h2>
+                <p>{optional}</p>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <slot />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .product-page {
+    padding-top: 5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .product-hero {
+    padding: 3rem 0 4rem;
+    background: var(--color-cream);
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .product-image-wrap {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--color-gray-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-image-wrap img {
+    max-height: 400px;
+    object-fit: contain;
+  }
+
+  .product-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-green);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+
+  .product-desc {
+    font-size: 1.05rem;
+    color: var(--color-gray);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .product-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1.75rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background: var(--color-green);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-green-dark);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--color-dark);
+    border: 1px solid var(--color-gray-border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-green);
+    color: var(--color-green);
+    transform: translateY(-1px);
+  }
+
+  .product-details {
+    padding: 4rem 0;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: 1.25rem;
+  }
+
+  .specs-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .specs-table tr {
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .spec-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-gray);
+    padding: 0.75rem 1rem 0.75rem 0;
+    white-space: nowrap;
+    width: 40%;
+  }
+
+  .spec-value {
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    padding: 0.75rem 0;
+  }
+
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info-block p {
+    font-size: 0.92rem;
+    color: var(--color-gray);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

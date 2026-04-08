@@ -1,0 +1,19 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KKF470/15-6"
+  subtitle="Chamber Filter Press"
+  image={`${base}/images/kkf470-15-6.jpg`}
+  description="A high-capacity chamber filter press with 15 plates and hydraulic high-pressure closure for demanding production environments."
+  specs={[
+    { label: "Voltage", value: "400V / 3-phase" },
+    { label: "Filter Plates", value: "15 × 470×470 mm HDPP" },
+    { label: "Closure", value: "Hydraulic high-pressure" },
+    { label: "Weight", value: "1000 kg" }
+  ]}
+  scope="Chamber filter press (pressure switch, clear candle filter housing with 20-inch 1um filter candle, expansion tank, cake tub in stainless steel, check valve, pressure gauge, overfill protection, piping in stainless steel, hydraulic high-pressure closure), 15 filter plates 470×470 mm HDPP, 15 filter cloths 470×470 mm HDPP, eccentric screw pump KKF470-6, electric control cabinet."
+  brochure="kkf470-15-6-kkf630-brochure.pdf"
+/>

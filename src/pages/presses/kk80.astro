@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KK80 F Universal"
+  subtitle="Production Oil Press"
+  image={`${base}/images/kk80.jpg`}
+  description="The KK80 is built for serious production. At up to 175 lb/hr capacity, it's ideal for mid-scale commercial oil pressing operations."
+  specs={[
+    { label: "Seed Capacity", value: "up to 175 lb / 80 kg/h" },
+    { label: "Engine Power", value: "7.5 hp / 5.5 kW" },
+    { label: "Speed", value: "15–70 RPM" },
+    { label: "Voltage Standard", value: "208/230/460/480/400V-3ph" },
+    { label: "Voltage Special", value: "230V-1ph (additional cost)" },
+    { label: "Dimensions", value: "1700 × 500 × 1260 mm" },
+    { label: "Weight", value: "860 lb / 390 kg" },
+  ]}
+  applications="Mainly for oil-rich seeds (20–70% oil content): almonds, apricot kernels, argan, black cumin, camellia, cashew, cherry pits, chia, cotton seeds, corn germ, coconut/copra, flax, gold of pleasure, hazelnut, hemp, jatropha, jojoba, macadamia nut, milk thistle, moringa, mustard, neem, niger seed, peanut, poppy seed, pumpkin seeds, rapeseed, sacha inchi, safflower, sesame, shea, soybeans, sunflower seeds, walnut, and more."
+  scope="Oil press with stainless steel hopper (sieve bars, screws/cones, variable press gap), electrical control cabinet (0/1-switch, cable, emergency off, on/off buttons, reverse mode, CEKON-plug, frequency converter), pressing tools (2 socket wrench, 1 allen key)."
+  brochure="kk80-brochure.pdf"
+/>

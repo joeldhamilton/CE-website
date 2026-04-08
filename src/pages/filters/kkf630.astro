@@ -1,0 +1,19 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KKF630/20-6"
+  subtitle="Chamber Filter Press"
+  image={`${base}/images/kkf630.jpg`}
+  description="The largest filter in the Kern Kraft line. 20 plates with hydraulic closure for maximum throughput in industrial oil production."
+  specs={[
+    { label: "Voltage", value: "400V / 3-phase" },
+    { label: "Filter Plates", value: "20 × 630×630 mm HDPP" },
+    { label: "Closure", value: "Hydraulic high-pressure" },
+    { label: "Weight", value: "2200 kg" }
+  ]}
+  scope="Chamber filter press (pressure switch, bag filter housing with 1um fine filter bag, expansion tank in stainless steel, cake tub in stainless steel, check valve, pressure gauge, overfill protection, piping in stainless steel, hydraulic high-pressure closure), 20 filter plates 630×630 mm HDPP, 20 filter cloths 630×630 mm HDPP, eccentric screw pump KKF630, electric control cabinet."
+  brochure="kkf470-15-6-kkf630-brochure.pdf"
+/>

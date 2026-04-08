@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Pin Mill"
+  subtitle="Fine Grinding Mill"
+  image={`${base}/images/pin-mill.jpg`}
+  description="Produces fine powders and flours at up to 200 kg/hr. Stainless steel construction throughout."
+  specs={[
+    { label: "Power", value: "6 kW (7.5 hp)" },
+    { label: "Voltage", value: "240/480V 3-phase" },
+    { label: "RPM", value: "5800–8700" },
+    { label: "Capacity", value: "up to 440 lb / 200 kg/h" },
+    { label: "Grinding Degree", value: "<150 um / <100 mesh" },
+    { label: "Dimensions", value: "1100 × 600 × 1200 mm" },
+    { label: "Weight", value: "150 kg" },
+  ]}
+  scope="Pin mill in 1.4301 stainless steel with motor, motor protection integrated (0/1 emergency stop), electric connection cable (ready to plug in)."
+  optional="Speed control, dosing tank, cyclone separator, water cooling."
+  brochure="pin-mill-brochure.pdf"
+/>

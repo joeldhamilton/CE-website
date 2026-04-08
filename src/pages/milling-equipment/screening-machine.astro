@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Screening Machine"
+  subtitle="Vibratory Screen"
+  image={`${base}/images/screening-machine.jpg`}
+  description="Round vibratory screening for preliminary oil filtration and flour sifting. Two sizes available."
+  specs={[
+    { label: "SM600 Oil Capacity", value: "up to 50 l/h" },
+    { label: "SM800 Oil Capacity", value: "up to 100 l/h" },
+    { label: "SM600 Control Screening", value: "max 4000 kg/h" },
+    { label: "SM800 Control Screening", value: "max 8000 kg/h" },
+    { label: "Power", value: "0.62 kW (400V 50Hz)" },
+    { label: "SM600 Weight", value: "90 kg" },
+    { label: "SM800 Weight", value: "120 kg" },
+  ]}
+  applications="Preliminary filtration of crude oil, flour sifting."
+  optional="Pumping tank, agitator, oil pumps, different screens, several decks possible."
+  brochure="screening-machine-brochure.pdf"
+/>

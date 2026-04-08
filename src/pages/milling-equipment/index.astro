@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ProductCard from '../../components/ProductCard.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Milling & Processing Equipment | Circle Energy">
+  <Header />
+  <main class="category-page">
+    <section class="category-hero">
+      <div class="container">
+        <h1>Milling & Processing Equipment</h1>
+        <p>We offer a large variety of tools to improve the efficiency of your milling operations, both before pressing the seed and after.</p>
+      </div>
+    </section>
+    <section class="products">
+      <div class="container">
+        <div class="product-grid">
+          <ProductCard
+            name="Concentrator Mill"
+            subtitle="Separation Mill"
+            image={`${base}/images/concentrator-mill.jpg`}
+            href={`${base}/milling-equipment/concentrator-mill/`}
+            capacity="Up to 30 kg/hr"
+          />
+          <ProductCard
+            name="Dehuller"
+            subtitle="Table Sorter + Dehuller"
+            image={`${base}/images/dehuller.png`}
+            href={`${base}/milling-equipment/dehuller/`}
+            capacity="Up to 200 kg/hr"
+          />
+          <ProductCard
+            name="Peeler (KK SBS 500)"
+            subtitle="Seed Peeler"
+            image={`${base}/images/peeler.jpg`}
+            href={`${base}/milling-equipment/peeler/`}
+            capacity="Up to 500 kg/hr"
+          />
+          <ProductCard
+            name="Pellet Press"
+            subtitle="Pellet Press"
+            image={`${base}/images/pellet-press.jpg`}
+            href={`${base}/milling-equipment/pellet-press/`}
+            capacity="100–300 kg/hr"
+          />
+          <ProductCard
+            name="Pin Mill"
+            subtitle="Fine Grinding Mill"
+            image={`${base}/images/pin-mill.jpg`}
+            href={`${base}/milling-equipment/pin-mill/`}
+            capacity="Up to 200 kg/hr"
+          />
+          <ProductCard
+            name="Roller Mill"
+            subtitle="Roller Mill / Flaker"
+            image={`${base}/images/roller-mill.jpg`}
+            href={`${base}/milling-equipment/roller-mill/`}
+            capacity="Up to 750 kg/hr"
+          />
+          <ProductCard
+            name="Screening Machine"
+            subtitle="Vibratory Screen"
+            image={`${base}/images/screening-machine.jpg`}
+            href={`${base}/milling-equipment/screening-machine/`}
+            capacity="Up to 8000 kg/hr"
+          />
+          <ProductCard
+            name="Toaster"
+            subtitle="Seed & Grain Toaster"
+            image={`${base}/images/toaster.jpg`}
+            href={`${base}/milling-equipment/toaster/`}
+            capacity="100–200 kg/hr"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .category-page {
+    padding-top: 5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .category-hero {
+    padding: 3rem 0 2rem;
+    background: var(--color-cream);
+    text-align: center;
+  }
+
+  .category-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+
+  .category-hero p {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .products {
+    padding: 3rem 0 5rem;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

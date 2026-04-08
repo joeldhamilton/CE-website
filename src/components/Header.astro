@@ -1,0 +1,253 @@
+---
+const base = import.meta.env.BASE_URL;
+
+const navLinks = [
+  { href: `${base}/`, label: 'Home' },
+  {
+    href: `${base}/presses/`, label: 'Presses',
+    children: [
+      { href: `${base}/presses/oil-prince/`, label: 'Oil Prince' },
+      { href: `${base}/presses/kk20/`, label: 'KK20' },
+      { href: `${base}/presses/kk40/`, label: 'KK40' },
+      { href: `${base}/presses/kk80/`, label: 'KK80' },
+      { href: `${base}/presses/kk100/`, label: 'KK100' },
+      { href: `${base}/presses/kk200/`, label: 'KK200' },
+      { href: `${base}/presses/kk500/`, label: 'KK500' },
+      { href: `${base}/presses/hand-press/`, label: 'Hand Press' },
+    ]
+  },
+  {
+    href: `${base}/filters/`, label: 'Filters',
+    children: [
+      { href: `${base}/filters/kkf5/`, label: 'KKF5' },
+      { href: `${base}/filters/kkf20/`, label: 'KKF20' },
+      { href: `${base}/filters/kkf200/`, label: 'KKF200/10-2' },
+      { href: `${base}/filters/kkf350/`, label: 'KKF350/10-2' },
+      { href: `${base}/filters/kkf470-10-3/`, label: 'KKF470/10-3' },
+      { href: `${base}/filters/kkf470-15-6/`, label: 'KKF470/15-6' },
+      { href: `${base}/filters/kkf630/`, label: 'KKF630/20-6' },
+    ]
+  },
+  {
+    href: `${base}/milling-equipment/`, label: 'Milling Equipment',
+    children: [
+      { href: `${base}/milling-equipment/concentrator-mill/`, label: 'Concentrator Mill' },
+      { href: `${base}/milling-equipment/dehuller/`, label: 'Dehuller' },
+      { href: `${base}/milling-equipment/peeler/`, label: 'Peeler' },
+      { href: `${base}/milling-equipment/pellet-press/`, label: 'Pellet Press' },
+      { href: `${base}/milling-equipment/pin-mill/`, label: 'Pin Mill' },
+      { href: `${base}/milling-equipment/roller-mill/`, label: 'Roller Mill' },
+      { href: `${base}/milling-equipment/screening-machine/`, label: 'Screening Machine' },
+      { href: `${base}/milling-equipment/toaster/`, label: 'Toaster' },
+    ]
+  },
+  { href: `${base}/used-equipment/`, label: 'Used Equipment' },
+  { href: `${base}/contact/`, label: 'Contact' },
+];
+---
+
+<header class="header">
+  <div class="header-inner">
+    <a href={`${base}/`} class="logo">
+      <img src={`${base}/images/logo.gif`} alt="Circle Energy" class="logo-img" />
+    </a>
+    <nav class="nav" id="nav">
+      {navLinks.map(link => (
+        <div class={`nav-item ${link.children ? 'has-dropdown' : ''}`}>
+          <a href={link.href} class="nav-link">{link.label}</a>
+          {link.children && (
+            <div class="dropdown">
+              {link.children.map(child => (
+                <a href={child.href} class="dropdown-link">{child.label}</a>
+              ))}
+            </div>
+          )}
+        </div>
+      ))}
+    </nav>
+    <a href={`${base}/contact/`} class="header-cta">Request a Quote</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('nav');
+  toggle?.addEventListener('click', () => {
+    nav?.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+  // Close mobile menu on link click
+  nav?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle?.classList.remove('active');
+    });
+  });
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-gray-border);
+  }
+
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .logo-img {
+    height: 44px;
+    width: auto;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-dark);
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--color-green);
+    background: var(--color-green-pale);
+  }
+
+  .has-dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid var(--color-gray-border);
+    border-radius: 8px;
+    padding: 0.5rem;
+    min-width: 200px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all 0.2s ease;
+    z-index: 100;
+  }
+
+  .dropdown-link {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--color-dark);
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+
+  .dropdown-link:hover {
+    color: var(--color-green);
+    background: var(--color-green-pale);
+  }
+
+  .header-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    background: var(--color-green);
+    padding: 0.55rem 1.25rem;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .header-cta:hover {
+    background: var(--color-green-dark);
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-dark);
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .menu-toggle.active span:nth-child(2) { opacity: 0; }
+  .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  @media (max-width: 1024px) {
+    .header-cta { display: none; }
+    .menu-toggle { display: flex; }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 320px;
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 5rem 1.5rem 2rem;
+      gap: 0.25rem;
+      transition: right 0.3s ease;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+      overflow-y: auto;
+    }
+
+    .nav.open { right: 0; }
+
+    .nav-item { position: static; }
+
+    .dropdown {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      border: none;
+      padding: 0 0 0 1rem;
+      min-width: 0;
+    }
+  }
+</style>

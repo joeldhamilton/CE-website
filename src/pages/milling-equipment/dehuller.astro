@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Dehuller Model 125"
+  subtitle="Table Sorter + Dehuller"
+  image={`${base}/images/dehuller.png`}
+  description="Combined table sorter and dehuller for removing hulls from cereals and oil seeds. Processes up to 200 kg/hr for cereals."
+  specs={[
+    { label: "Type", value: "Table sorter + dehuller" },
+    { label: "Cereals Capacity", value: "up to 200 kg/h" },
+    { label: "Oil Seeds Capacity", value: "up to 50 kg/h" },
+    { label: "Electricity", value: "2.2 kW (240/480V-3ph or 220V-1ph)" },
+    { label: "Dimensions", value: "1200 × 1500 × 2000 mm" },
+    { label: "Weight", value: "200 kg" },
+  ]}
+  applications="Cereals: buckwheat, spelt, emmer, oat, einkorn. Oil seeds: hemp, sunflower, moringa, sacha inchi."
+  scope="Dehuller with sieves, speed control, 3-step table sorter."
+  optional="Upgrade available with stainless steel contact parts."
+  brochure="dehuller-brochure.pdf"
+/>

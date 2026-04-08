@@ -1,0 +1,18 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KKF200/10-2"
+  subtitle="Chamber Filter Press"
+  image={`${base}/images/kkf200.jpg`}
+  description="A compact chamber filter press for clear, market-ready oil. 10 HDPP filter plates for efficient sediment removal."
+  specs={[
+    { label: "Voltage", value: "400V / 3-phase" },
+    { label: "Filter Plates", value: "10 × 200×200 mm HDPP" },
+    { label: "Weight", value: "70 kg" }
+  ]}
+  scope="Chamber filter press (pressure switch, candle filter housing, pressure gauge, cake tub in stainless steel, piping in stainless steel, expansion tank in stainless steel), 10 filter plates 200×200 mm HDPP, 10 filter cloths 200×200 mm HDPP, eccentric screw pump KKF200, electric control cabinet (ON-OFF-DELAY switch, pump running time shut down, filling level shut down)."
+  brochure="kkf200-brochure.pdf"
+/>

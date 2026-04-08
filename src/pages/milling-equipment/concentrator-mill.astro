@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Concentrator Mill"
+  subtitle="Separation Mill"
+  image={`${base}/images/concentrator-mill.jpg`}
+  description="Separates shell and protein from crushed press cake. Also mills cereals and grains. Stepless gap adjustment for precise control."
+  specs={[
+    { label: "Throughput", value: "up to 30 kg/h" },
+    { label: "Engine Power", value: "2.9 kW" },
+    { label: "Voltage", value: "110V-2ph / 230V-1ph / 400-480V-3ph (50/60 Hz)" },
+    { label: "Gap", value: "Stepless adjustable" },
+    { label: "Dimensions", value: "420 × 415 × 855 mm" },
+    { label: "Weight", value: "60 kg" },
+  ]}
+  applications="Separation of shell and protein from crushed press cake (hemp, walnut, linseed, rapeseed, rose hip, hazelnut, sunflower, camelina, etc.), barley, wheat, amaranth, oats, buckwheat, spelt, millet, corn, rye, quinoa, and more."
+  scope="Concentrator mill with adjustable feet, motor protection integrated (0/1 emergency stop switch), electrical connection cable (ready to plug in)."
+  optional="Various strainer covers, different rotors."
+  brochure="concentrator-mill-brochure.pdf"
+/>

@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KK20 F Universal"
+  subtitle="Small Oil Press"
+  image={`${base}/images/kk20.jpg`}
+  description="The KK20 is a compact, powerful press for small to mid-scale oil production. Versatile enough to press dozens of seed types."
+  specs={[
+    { label: "Seed Capacity", value: "up to 20 kg/h" },
+    { label: "Engine Power", value: "2.2 kW" },
+    { label: "Speed", value: "15–70 RPM" },
+    { label: "Voltage Standard", value: "230V-1ph or 400V-3ph" },
+    { label: "Voltage Special", value: "110V-2ph / 230V-3ph / 460-480V-3ph" },
+    { label: "Dimensions", value: "480 × 480 × 620 mm" },
+    { label: "Weight", value: "135 kg" },
+  ]}
+  applications="Almonds, apricot kernels, argan, avocado, black cumin, borage, brazil nuts, camellia, cashew, cherry pits, chia, cocoa beans, coconut/copra, coriander, corn germ, cotton seeds, crickets, elderberry seeds, fenugreek, gold of pleasure, hazelnut, hemp, jatropha, jojoba, linseed, lupines, macadamia nut, melon seeds, milk thistle, moringa, mustard, niger seed, palm kernels, peanuts, poppy seed, pumpkin seeds, rapeseed, sacha inchi, safflower, sesame, shea, soybeans, sunflower seeds, walnuts, and more."
+  scope="Oil press with stainless steel hopper, electrical control cabinet, heating sleeve 230V, press nozzle set (5–16mm), pressing tools, food-safe gear oil."
+  brochure="kk20-brochure.pdf"
+/>

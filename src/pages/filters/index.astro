@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import ProductCard from '../../components/ProductCard.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Oil Filters | Circle Energy">
+  <Header />
+  <main class="category-page">
+    <section class="category-hero">
+      <div class="container">
+        <h1>Oil Filters</h1>
+        <p>Our plate filters are the best way to get crystal clear oil. We'll help you find the right size filter to match your daily production.</p>
+      </div>
+    </section>
+    <section class="products">
+      <div class="container">
+        <div class="product-grid">
+          <ProductCard
+            name="KKF5"
+            subtitle="Candle Filter"
+            image={`${base}/images/kkf5.jpg`}
+            href={`${base}/filters/kkf5/`}
+          />
+          <ProductCard
+            name="KKF20"
+            subtitle="Candle Filter"
+            image={`${base}/images/kkf20.jpg`}
+            href={`${base}/filters/kkf20/`}
+          />
+          <ProductCard
+            name="KKF200/10-2"
+            subtitle="Chamber Filter Press"
+            image={`${base}/images/kkf200.jpg`}
+            href={`${base}/filters/kkf200/`}
+            capacity="70 kg"
+          />
+          <ProductCard
+            name="KKF350/10-2"
+            subtitle="Chamber Filter Press"
+            image={`${base}/images/kkf350.jpg`}
+            href={`${base}/filters/kkf350/`}
+            capacity="200 kg"
+          />
+          <ProductCard
+            name="KKF470/10-3"
+            subtitle="Chamber Filter Press"
+            image={`${base}/images/kkf470-10-3.jpg`}
+            href={`${base}/filters/kkf470-10-3/`}
+            capacity="370 kg"
+          />
+          <ProductCard
+            name="KKF470/15-6"
+            subtitle="Chamber Filter Press"
+            image={`${base}/images/kkf470-15-6.jpg`}
+            href={`${base}/filters/kkf470-15-6/`}
+            capacity="1000 kg"
+          />
+          <ProductCard
+            name="KKF630/20-6"
+            subtitle="Chamber Filter Press"
+            image={`${base}/images/kkf630.jpg`}
+            href={`${base}/filters/kkf630/`}
+            capacity="2200 kg"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .category-page {
+    padding-top: 5rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .category-hero {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+    background: var(--color-cream);
+    text-align: center;
+  }
+
+  .category-hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+  }
+
+  .category-hero p {
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .products {
+    padding: 4rem 0;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>

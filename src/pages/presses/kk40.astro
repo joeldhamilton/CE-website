@@ -1,0 +1,21 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KK40"
+  subtitle="Mid-Size Oil Press"
+  image={`${base}/images/kk40.jpg`}
+  description="The KK40 bridges the gap between small-batch and production-scale pressing. Reliable performance for growing operations."
+  specs={[
+    { label: "Seed Capacity", value: "up to 40 kg/h" },
+    { label: "Engine Power", value: "3.0 kW" },
+    { label: "Speed", value: "15–70 RPM" },
+    { label: "Voltage", value: "400V-3ph (others on request)" },
+    { label: "Weight", value: "approx. 200 kg" },
+  ]}
+  applications="Suitable for oil-rich seeds including rapeseed, sunflower, linseed, hemp, sesame, peanut, and many more."
+  scope="Oil press with stainless steel hopper, electrical control cabinet, pressing tools."
+  brochure="kk40-brochure.pdf"
+/>

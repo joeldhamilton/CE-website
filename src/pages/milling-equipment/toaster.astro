@@ -1,0 +1,21 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Toaster"
+  subtitle="Seed & Grain Conditioning"
+  image={`${base}/images/toaster.jpg`}
+  description="Multi-tube toasting and conditioning system for press cake and whole grains. Essential for soybean meal processing."
+  specs={[
+    { label: "KKT-R100 Capacity", value: "100 kg/h (drive 2.2 kW / heating 12 kW)" },
+    { label: "KKT-R200 Capacity", value: "200 kg/h (drive 2.2 kW / heating 24 kW)" },
+    { label: "Suction", value: "80W / 400 m³/h" },
+    { label: "Voltage", value: "230V / 400V / 460-480V 3-phase" },
+    { label: "Dimensions", value: "5.5 × 1.0 × 2.2 m" },
+  ]}
+  applications="Press cake: soybean, sunflower, lupine, canola, and more. Grain: soybeans, barley, canola, corn, lupines, peas, sunflower, wheat, and more."
+  scope="Toaster system with speed control."
+  brochure="toaster-brochure.pdf"
+/>

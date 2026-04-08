@@ -1,0 +1,25 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Peeler KK SBS 500"
+  subtitle="Seed Peeler & Aspirator"
+  image={`${base}/images/peeler.jpg`}
+  description="High-capacity peeling and aspiration unit for removing seed shells before pressing. Handles up to 500 kg/hr."
+  specs={[
+    { label: "Seed Capacity", value: "up to 500 kg/hr" },
+    { label: "Peeler Power", value: "2.2 kW" },
+    { label: "Aspiration Power", value: "0.75 kW" },
+    { label: "Peeler RPM", value: "1200–3500" },
+    { label: "Voltage", value: "400V 50Hz" },
+    { label: "Dimensions (without aspiration)", value: "900 × 650 × 1730 mm" },
+    { label: "Dimensions (with aspiration)", value: "1500 × 650 × 1730 mm" },
+    { label: "Weight", value: "100 kg" },
+  ]}
+  applications="Peeling of sunflower kernels, moringa, peanuts, hazelnuts, soybeans, lupines, peas, and more."
+  scope="Peeler and aspiration unit, ready to plug in."
+  optional="Different throwing wheels, foot extension, different impact rings, aero-cyclone, control flap."
+  brochure="peeler-brochure.pdf"
+/>

@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Oil Prince F Universal"
+  subtitle="Compact Oil Press"
+  image={`${base}/images/oil-prince.jpg`}
+  description="The Oil Prince is a compact, versatile cold-press oil press ideal for small-batch production, research, and artisan oil makers."
+  specs={[
+    { label: "Seed Capacity", value: "up to 15 kg/h" },
+    { label: "Engine Power", value: "2.2 kW" },
+    { label: "Speed", value: "15–70 RPM" },
+    { label: "Voltage", value: "230V 50/60 Hz single-phase" },
+    { label: "Dimensions", value: "950 × 465 × 510 mm" },
+    { label: "Weight", value: "80 kg" },
+  ]}
+  applications="Argan, amaranth, apricot kernels, avocado seeds, baobab, cashew, chia, coconut/copra, cotton seeds, fenugreek, gold of pleasure, hazelnut, hemp, jatropha, jojoba, linseed, lupines, macadamia nuts, corn germ, almonds, milk thistle, moringa, neem, niger seed, peanut, poppy seed, pumpkin seeds, rapeseed, sacha inchi, safflower, sesame, shea, soybeans, sunflower seeds, walnut, and many more on request."
+  scope="Oil press with stainless steel hopper (standard screw, sieve/barrel, breaker, cover nut, counter nut), electrical control cabinet (0/1-switch, connection cable, emergency off, shockproof plug, frequency converter and speed control), heating sleeve 230V, press nozzle set (5–16mm), pressing tools, food-safe lubricant."
+  brochure="oil-prince-brochure.pdf"
+  optional="Special equipment for different seeds available on request."
+/>

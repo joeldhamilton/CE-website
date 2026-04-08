@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Used Equipment | Circle Energy">
+  <Header />
+  <main class="used-page">
+    <section class="used-hero">
+      <div class="container">
+        <h1>Used Equipment</h1>
+        <p>Circle Energy offers used and new equipment on a consignment basis.</p>
+      </div>
+    </section>
+
+    <section class="used-content">
+      <div class="container">
+        <div class="used-card">
+          <h2>Looking to Buy?</h2>
+          <p>We occasionally have pre-owned Kern Kraft presses, filters, and milling equipment available. Contact us to ask about current inventory.</p>
+          <a href={`${base}/contact/`} class="btn">Check Availability</a>
+        </div>
+        <div class="used-card">
+          <h2>Looking to Sell?</h2>
+          <p>If you have equipment to sell, we offer consignment services. Get in touch and we'll discuss how we can help.</p>
+          <a href={`${base}/contact/`} class="btn">List Your Equipment</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .used-page { padding-top: 4rem; }
+
+  .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+
+  .used-hero {
+    padding: 4rem 0 3rem;
+    background: var(--color-cream);
+    text-align: center;
+  }
+
+  .used-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.75rem; }
+  .used-hero p { font-size: 1.1rem; color: var(--color-gray); }
+
+  .used-content {
+    padding: 3rem 0 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .used-card {
+    border: 1px solid var(--color-gray-border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .used-card h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .used-card p { font-size: 0.95rem; color: var(--color-gray); line-height: 1.7; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: var(--color-green);
+    color: white;
+    transition: all 0.2s ease;
+  }
+
+  .btn:hover { background: var(--color-green-dark); transform: translateY(-1px); }
+</style>

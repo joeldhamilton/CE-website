@@ -1,0 +1,18 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KKF350/10-2"
+  subtitle="Chamber Filter Press"
+  image={`${base}/images/kkf350.jpg`}
+  description="A mid-size chamber filter press with 10 filter plates for consistent, high-quality oil filtration."
+  specs={[
+    { label: "Voltage", value: "400V / 3-phase" },
+    { label: "Filter Plates", value: "10 × 350×350 mm HDPP" },
+    { label: "Weight", value: "200 kg" }
+  ]}
+  scope="Chamber filter press (pressure switch, candle filter housing with 20-inch 1um filter candle, expansion tank, cake tub in stainless steel, check valve, pressure gauge, overfill protection, piping in stainless steel), 10 filter plates 350×350 mm HDPP, 10 filter cloths 350×350 mm HDPP, eccentric screw pump KKF350, electric control cabinet."
+  brochure="kkf350-brochure.pdf"
+/>

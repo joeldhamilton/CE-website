@@ -1,0 +1,22 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Hand Press"
+  subtitle="Manual Oil Press"
+  image={`${base}/images/hand-press.jpg`}
+  description="A hand-cranked oil press for demonstrations, education, and small personal use. Simple to operate with no compressed air or complex power requirements."
+  specs={[
+    { label: "Seed Capacity", value: "up to 3 kg/h" },
+    { label: "Heating Power", value: "0–50 W" },
+    { label: "Speed", value: "dependent on operator" },
+    { label: "Voltage", value: "230V (heating only)" },
+    { label: "Dimensions", value: "380 × 170 × 360 mm (with crank: 530 × 260 × 360 mm)" },
+    { label: "Weight", value: "8 kg" },
+  ]}
+  applications="Peanut, hemp, gold of pleasure, linseed, rapeseed, black cumin, sesame, sunflower, walnut (crushed), others on request."
+  scope="Manual oil press with stainless steel hopper, crank, stepless press gap adjustment, tool-free operating, heating sleeve, tension clamp for fixing to table."
+  brochure="hand-press-brochure.pdf"
+/>

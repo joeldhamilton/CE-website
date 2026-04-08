@@ -1,0 +1,23 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="KK500 F Universal"
+  subtitle="Heavy-Duty Industrial Press"
+  image={`${base}/images/kk500.jpg`}
+  description="The KK500 is the flagship of the Kern Kraft press line. Up to 500 kg/hr capacity for the highest-volume oil production operations."
+  specs={[
+    { label: "Seed Capacity", value: "up to 500 kg/h" },
+    { label: "Engine Power", value: "18.5 kW" },
+    { label: "Speed", value: "15–70 RPM" },
+    { label: "Voltage Standard", value: "400V-3ph" },
+    { label: "Voltage Special", value: "230V-3ph / 460-480V-3ph" },
+    { label: "Dimensions", value: "3029 × 860 × 883 mm" },
+    { label: "Weight", value: "1700 kg" },
+  ]}
+  applications="Apricot kernels, black cumin, cherry pits, chia, coffee beans, coconut/copra, coriander, corn germ, cotton seeds, elderberry seeds, fenugreek, gold of pleasure, grape seeds, jatropha, jojoba, linseed, melon kernels, milk thistle, moringa, mustard, neem, niger seeds, palm kernels, peach kernels, peanuts, plum kernels, pomegranate seeds, poppy seeds, pumpkin seeds, rapeseed, sacha inchi, safflower, sesame, soybeans, sunflower seeds, and more."
+  scope="Oil press with steel hopper, electrical control cabinet, pressing tools (hook spanner, socket wrench with extension, shaft for gap adjustment)."
+  brochure="kk500-brochure.pdf"
+/>

@@ -1,0 +1,21 @@
+---
+import ProductLayout from '../../layouts/ProductLayout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<ProductLayout
+  name="Roller Mill"
+  subtitle="Flaker / Crusher"
+  image={`${base}/images/roller-mill.jpg`}
+  description="Flake, crush, and pre-mill seeds and grains. Three models with gap adjustment from 0.1 to 10 mm."
+  specs={[
+    { label: "Model 552", value: "2 rollers × 200mm wide (<550 kg/h / 5.5 kW / 355 kg)" },
+    { label: "Model 553", value: "2 rollers × 300mm wide (<550 kg/h / 5.5 kW / 375 kg)" },
+    { label: "Model 753", value: "2 rollers × 300mm wide (>750 kg/h / 7.5 kW / 485 kg)" },
+    { label: "Voltage", value: "400V / 3-phase" },
+    { label: "Gap Width", value: "0.1–10 mm" },
+  ]}
+  applications="Flaking/crushing of hard seeds, pre-milling of press cake, grain milling, flaking/crushing of malted barley, grain fine milling."
+  scope="Roller mill/flaker with base, stainless steel hopper, gap adjustment, control cabinet (wall mounting), electric connection cable (ready to plug in)."
+  brochure="roller-mill-brochure.pdf"
+/>
